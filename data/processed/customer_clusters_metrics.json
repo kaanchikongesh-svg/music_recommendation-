@@ -1,0 +1,252 @@
+{
+  "status": "success",
+  "raw_file": "data\\raw\\Mall_Customers.csv",
+  "database_file": "data/customers.db",
+  "table_name": "mall_customers",
+  "total_records_imported": 200,
+  "quality_report": {
+    "raw_path": "data\\raw\\Mall_Customers.csv",
+    "initial_rows": 200,
+    "cleaned_rows": 200,
+    "columns_validated": [
+      "customer_id",
+      "gender",
+      "age",
+      "annual_income_k",
+      "spending_score"
+    ],
+    "missing_values_found": {
+      "customer_id": 0,
+      "gender": 0,
+      "age": 0,
+      "annual_income_k": 0,
+      "spending_score": 0
+    },
+    "total_missing": 0,
+    "duplicate_rows": 0,
+    "duplicate_customer_ids": 0,
+    "invalid_age_records": 0,
+    "invalid_income_records": 0,
+    "invalid_spending_records": 0,
+    "is_valid": true
+  },
+  "clustering": {
+    "algorithm": "K-Means",
+    "selected_k": 6,
+    "features": [
+      "age",
+      "annual_income_k",
+      "spending_score"
+    ],
+    "evaluation": {
+      "features_used": [
+        "age",
+        "annual_income_k",
+        "spending_score"
+      ],
+      "k_range": [
+        2,
+        10
+      ],
+      "evaluations": [
+        {
+          "k": 2,
+          "silhouette_score": 0.3355,
+          "inertia": 389.39,
+          "davies_bouldin_index": 1.2607,
+          "calinski_harabasz_score": 107.1
+        },
+        {
+          "k": 3,
+          "silhouette_score": 0.3578,
+          "inertia": 295.21,
+          "davies_bouldin_index": 1.0503,
+          "calinski_harabasz_score": 101.69
+        },
+        {
+          "k": 4,
+          "silhouette_score": 0.404,
+          "inertia": 205.23,
+          "davies_bouldin_index": 0.9308,
+          "calinski_harabasz_score": 125.68
+        },
+        {
+          "k": 5,
+          "silhouette_score": 0.4166,
+          "inertia": 168.25,
+          "davies_bouldin_index": 0.8746,
+          "calinski_harabasz_score": 125.1
+        },
+        {
+          "k": 6,
+          "silhouette_score": 0.4284,
+          "inertia": 133.87,
+          "davies_bouldin_index": 0.8254,
+          "calinski_harabasz_score": 135.1
+        },
+        {
+          "k": 7,
+          "silhouette_score": 0.4172,
+          "inertia": 117.01,
+          "davies_bouldin_index": 0.7935,
+          "calinski_harabasz_score": 132.77
+        },
+        {
+          "k": 8,
+          "silhouette_score": 0.4082,
+          "inertia": 103.87,
+          "davies_bouldin_index": 0.8918,
+          "calinski_harabasz_score": 131.01
+        },
+        {
+          "k": 9,
+          "silhouette_score": 0.4177,
+          "inertia": 93.09,
+          "davies_bouldin_index": 0.8198,
+          "calinski_harabasz_score": 130.0
+        },
+        {
+          "k": 10,
+          "silhouette_score": 0.4066,
+          "inertia": 82.39,
+          "davies_bouldin_index": 0.8679,
+          "calinski_harabasz_score": 132.64
+        }
+      ],
+      "optimal_k": 6,
+      "best_silhouette_score": 0.4284
+    },
+    "silhouette_score": 0.4284,
+    "cluster_profiles": [
+      {
+        "cluster_id": 0,
+        "cluster_name": "Cluster 0",
+        "customer_count": 45,
+        "percentage": 22.5,
+        "mean_age": 56.33,
+        "mean_annual_income_k": 54.27,
+        "mean_spending_score": 49.07,
+        "gender_distribution": {
+          "Female": 26,
+          "Male": 19
+        },
+        "derived_description": "Older, Low Income, Moderate Spending"
+      },
+      {
+        "cluster_id": 1,
+        "cluster_name": "Cluster 1",
+        "customer_count": 39,
+        "percentage": 19.5,
+        "mean_age": 26.79,
+        "mean_annual_income_k": 57.1,
+        "mean_spending_score": 48.13,
+        "gender_distribution": {
+          "Female": 25,
+          "Male": 14
+        },
+        "derived_description": "Younger, Moderate Income, Moderate Spending"
+      },
+      {
+        "cluster_id": 2,
+        "cluster_name": "Cluster 2",
+        "customer_count": 33,
+        "percentage": 16.5,
+        "mean_age": 41.94,
+        "mean_annual_income_k": 88.94,
+        "mean_spending_score": 16.97,
+        "gender_distribution": {
+          "Male": 19,
+          "Female": 14
+        },
+        "derived_description": "Older, High Income, Low Spending"
+      },
+      {
+        "cluster_id": 3,
+        "cluster_name": "Cluster 3",
+        "customer_count": 39,
+        "percentage": 19.5,
+        "mean_age": 32.69,
+        "mean_annual_income_k": 86.54,
+        "mean_spending_score": 82.13,
+        "gender_distribution": {
+          "Female": 21,
+          "Male": 18
+        },
+        "derived_description": "Younger, High Income, High Spending"
+      },
+      {
+        "cluster_id": 4,
+        "cluster_name": "Cluster 4",
+        "customer_count": 23,
+        "percentage": 11.5,
+        "mean_age": 25.0,
+        "mean_annual_income_k": 25.26,
+        "mean_spending_score": 77.61,
+        "gender_distribution": {
+          "Female": 13,
+          "Male": 10
+        },
+        "derived_description": "Younger, Low Income, High Spending"
+      },
+      {
+        "cluster_id": 5,
+        "cluster_name": "Cluster 5",
+        "customer_count": 21,
+        "percentage": 10.5,
+        "mean_age": 45.52,
+        "mean_annual_income_k": 26.29,
+        "mean_spending_score": 19.38,
+        "gender_distribution": {
+          "Female": 13,
+          "Male": 8
+        },
+        "derived_description": "Older, Low Income, Low Spending"
+      }
+    ],
+    "overall_averages": {
+      "mean_age": 38.85,
+      "mean_annual_income_k": 60.56,
+      "mean_spending_score": 50.2
+    }
+  },
+  "overall_statistics": {
+    "total_customers": 200,
+    "average_age": 38.85,
+    "median_age": 36.0,
+    "average_annual_income_k": 60.56,
+    "median_annual_income_k": 61.5,
+    "average_spending_score": 50.2,
+    "median_spending_score": 50.0,
+    "gender_counts": {
+      "Female": 112,
+      "Male": 88
+    },
+    "gender_percentages": {
+      "Female": 56.0,
+      "Male": 44.0
+    },
+    "age_distribution": {
+      "18-25": 38,
+      "26-35": 60,
+      "36-50": 62,
+      "51+": 40
+    },
+    "income_distribution": {
+      "< $30k": 32,
+      "$30k - $60k": 66,
+      "$60k - $90k": 80,
+      "$90k+": 22
+    },
+    "spending_score_distribution": {
+      "Low (1-25)": 39,
+      "Moderate (26-50)": 64,
+      "High (51-75)": 59,
+      "Very High (76-100)": 38
+    },
+    "correlations": {
+      "age_vs_spending": -0.3272,
+      "income_vs_spending": 0.0099,
+      "age_vs_income": -0.0124
+    }
+  }
+}
